@@ -1,0 +1,1 @@
+submit:		"|sudo -u pagemail -g pagemail /var/www/pagemail/venv/bin/python /var/www/pagemail/submit.py"

@@ -1,0 +1,6 @@
+# Allow access by user nobody to the mail parsing script
+# nobody (from ALL hosts) may:
+# as user pagemail
+# with NOPASSWD
+# run /var/www/pagemail/venv/bin/python /var/www/pagemail/submit.py
+nobody ALL = (pagemail:pagemail) NOPASSWD: /var/www/pagemail/venv/bin/python /var/www/pagemail/submit.py

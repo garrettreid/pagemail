@@ -1,0 +1,10 @@
+{% extends "_layout.html" %}
+{% block title %}{{ email.subject }}{% endblock %}
+{% block content %}
+<h3>From: {{ email.sentfrom }}</h3>
+<h3>Subject: {{ email.subject }}</h3>
+<hr>
+<pre id="mailcontent">
+{{ email.content|safe}}
+</pre>
+{% endblock %}

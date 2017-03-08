@@ -1,0 +1,33 @@
+{% extends "_layout.html" %}
+{% block title %}{{ email.subject }} [Admin]{% endblock %}
+{% block content %}
+<h3>View information</h3>
+<p>View link: <a href="/view/{{ email.view_uuid }}/">view</a></p>
+<table style="border: 1px solid black;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid black;">Date</th>
+            <th style="border: 1px solid black;">IP</th>
+            <th style="border: 1px solid black;">Browser type</th>
+            <th style="border: 1px solid black;">Cookie</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for view in email.views %}
+        <tr>
+            <td style="border: 1px solid black;">{{ view[1] }}</td>
+            <td style="border: 1px solid black;">{{ view[2] }}</td>
+            <td style="border: 1px solid black;">{{ view[3] }}</td>
+            <td style="border: 1px solid black;">{{ view[4] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<hr>
+<h3>From: {{ email.sentfrom }}</h3>
+<h3>Subject: {{ email.subject }}</h3>
+<hr>
+<pre id="mailcontent">
+{{ email.content|safe }}
+</pre>
+{% endblock %}
