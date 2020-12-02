@@ -1,4 +1,4 @@
-from database import get_db
+from .database import get_db
 from datetime import datetime
 from flask import _app_ctx_stack
 from pybrowscap.loader.csv import load_file
@@ -55,9 +55,9 @@ class EmailView (object):
 def _get_browscap():
 	browscap = getattr(_app_ctx_stack, "_browscap", None)
 	if browscap is None:
-		print "Loading browscap... ",
+		print("Loading browscap... ", end="")
 		stdout.flush()
 		browscap_path = path.join(path.dirname(path.dirname(path.abspath(__file__))), 'browscap.csv')
 		browscap =  _app_ctx_stack._browscap = load_file(browscap_path)
-		print "done!"
+		print("done!")
 	return browscap

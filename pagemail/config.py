@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from os import path
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 from string import Template
 
 # This would be better as a singleton

@@ -1,5 +1,5 @@
 from flask import session, request
-from database import get_db
+from .database import get_db
 from functools import wraps
 from uuid import uuid4
 from .util import gen_uuid
